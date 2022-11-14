@@ -77,10 +77,103 @@ const Home: NextPage = () => {
               </ol>
               <button
                 className="absolute right-2 top-2 block w-8 rounded leading-8 text-slate-300 shadow-inner-300 hover:bg-slate-100 hover:text-slate-800"
+                id="btn-like-id"
                 type="button"
               >
                 &hearts;
               </button>
+            </div>
+            <div className="rounded p-6 pb-8 text-neutral-700 shadow-inner-300">
+              <h2
+                className="mb-2 text-xl font-bold text-neutral-800"
+                id="heading-anchor-id"
+              >
+                Heading H2
+              </h2>
+              <p>
+                <strong>Mauris turpis nunc</strong>, blandit et, volutpat
+                molestie, porta ut, ligula. Suspendisse potenti. Pellentesque
+                posuere. Phasellus volutpat, metus eget egestas mollis, lacus
+                lacus blandit dui, id egestas quam mauris ut lacus. Donec
+                venenatis vulputate lorem.
+              </p>
+              <div className="mt-8 flex flex-wrap">
+                <button
+                  className="rounded bg-violet-600 px-4 py-2 text-white hover:bg-violet-500"
+                  type="button"
+                >
+                  Button
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="mt-12 w-full gap-x-6 md:grid md:grid-cols-3">
+            <div className="col-span-2 rounded bg-gradient-to-r from-violet-600 to-fuchsia-500 py-12 pl-10 pr-[25%]">
+              <h2 className="text-3xl font-bold text-white">
+                <a href="#" className="hover:underline">
+                  Target’s bet to expand online sales: Make brick-and-mortar
+                  stores bigger
+                </a>
+              </h2>
+              <div className="mt-8 flex text-sm text-white">
+                <span>Meghan McCarty</span>
+                <span className="mx-4 block w-[1px] bg-white" />
+                <span>Carino Nov 14, 2022</span>
+              </div>
+              <p className="mt-6 text-white">
+                The retailer is planning to expand some new stores to include
+                dedicated space for shipping and picking up online orders.
+              </p>
+              <div className="-ml-10 -mb-12 mt-12 flex">
+                <div
+                  className="
+                  flex items-center
+                  rounded-tr-3xl bg-violet-200 bg-opacity-10
+                  py-6 pl-10 pr-6
+                "
+                >
+                  <a
+                    href="#"
+                    className="
+                      block rounded-full 
+                      bg-gradient-to-r from-emerald-200 to-emerald-300 
+                      py-2 px-12 
+                      text-xs font-semibold uppercase leading-6 tracking-wider text-emerald-900 
+                      hover:from-green-200 hover:to-green-300
+                    "
+                  >
+                    Listen now
+                  </a>
+                  <a
+                    href="#"
+                    className="
+                      ml-4 block rounded-full py-2 px-8 
+                      text-base font-semibold uppercase leading-6
+                      tracking-wider text-white shadow-inner-xs-white
+                      hover:bg-white hover:bg-opacity-10
+                    "
+                  >
+                    &hearts;
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="rounded">
+              <h3>Latest stories</h3>
+              <ul>
+                <li>
+                  A shortage of electrical transformers holds back utilities,
+                  businesses
+                </li>
+                <li>Amazon looks at cutting costs amid recession fears</li>
+                <li>
+                  {`Banks that helped finance Musk's Twitter purchase field low
+                  bids for debt`}
+                </li>
+                <li>
+                  When graduating into a recession actually makes you happier
+                </li>
+              </ul>
             </div>
           </div>
         </div>
