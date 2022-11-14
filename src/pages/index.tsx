@@ -1,6 +1,5 @@
 import { type NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -13,8 +12,77 @@ const Home: NextPage = () => {
 
       <main>
         <div className="container mx-auto flex min-h-screen flex-col items-center justify-center p-4">
-          <h1>DOM elements learning</h1>
-          <p>Collection of generic DOM elements includes:</p>
+          <h1 className="text-7xl font-black text-slate-300">
+            <span className="text-violet-400">DOM</span> elements
+          </h1>
+          <p className="mt-2 text-xl text-neutral-800">
+            Collection of generic DOM elements includes:
+          </p>
+          <div className="mt-8 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-6 lg:grid-cols-3">
+            <div className="rounded p-6 pb-8 text-neutral-700 shadow-inner-300">
+              <h2 className="mb-2 text-xl font-bold text-neutral-800">
+                Heading H2
+              </h2>
+              <p>
+                Paragraph interdum, metus et hendrerit aliquet, dolor diam
+                sagittis ligula, eget egestas libero turpis vel mi. Etiam ut
+                purus mattis mauris sodales aliquam. Nullam sagittis. Vivamus
+                consectetuer hendrerit lacus. Sed mollis, eros et ultrices
+                tempus, mauris ipsum aliquam libero, non adipiscing dolor urna a
+                orci.
+              </p>
+              <div className="mt-8 flex flex-wrap">
+                <button
+                  className="rounded bg-violet-600 px-4 py-2 text-white hover:bg-violet-500"
+                  type="button"
+                >
+                  Button
+                </button>
+                <a
+                  className="ml-2 inline-block rounded px-4 py-2 align-top shadow-inner-300 hover:bg-slate-100"
+                  href="#"
+                >
+                  Link
+                </a>
+              </div>
+            </div>
+            <div className="relative rounded p-6 pb-8 text-neutral-700 shadow-inner-300">
+              <h2 className="mb-2 text-xl font-bold text-neutral-800">
+                Heading H2
+              </h2>
+              <p>
+                Cras ultricies mi eu turpis hendrerit fringilla, urabitur
+                vestibulum aliquam leo.
+              </p>
+              <ul className="mt-4 list-inside list-disc">
+                <li>In consectetuer turpis ut velit</li>
+                <li>
+                  <a
+                    className="text-violet-600 underline hover:no-underline"
+                    href="#"
+                  >
+                    Nam quam nunc blandit
+                  </a>
+                </li>
+                <li>Sed magna purus fermentum eu</li>
+              </ul>
+              <ol className="mt-4 list-inside list-decimal">
+                <li>
+                  In <em>consectetuer</em> turpis ut velit
+                </li>
+                <li>
+                  Nam <strong>quam nunc</strong> blandit
+                </li>
+                <li>Sed magna purus fermentum eu</li>
+              </ol>
+              <button
+                className="absolute right-2 top-2 block w-8 rounded leading-8 text-slate-300 shadow-inner-300 hover:bg-slate-100 hover:text-slate-800"
+                type="button"
+              >
+                &hearts;
+              </button>
+            </div>
+          </div>
         </div>
       </main>
     </>
@@ -22,30 +90,3 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
-type TechnologyCardProps = {
-  name: string;
-  description: string;
-  documentation: string;
-};
-
-const TechnologyCard: React.FC<TechnologyCardProps> = ({
-  name,
-  description,
-  documentation,
-}) => {
-  return (
-    <section className="flex flex-col justify-center rounded border-2 border-gray-500 p-6 shadow-xl duration-500 motion-safe:hover:scale-105">
-      <h2 className="text-lg text-gray-700">{name}</h2>
-      <p className="text-sm text-gray-600">{description}</p>
-      <Link
-        className="m-auto mt-3 w-fit text-sm text-violet-500 underline decoration-dotted underline-offset-2"
-        href={documentation}
-        target="_blank"
-        rel="noreferrer"
-      >
-        Documentation
-      </Link>
-    </section>
-  );
-};
