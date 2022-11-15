@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import Widget from "../components/widget/widget.component";
 
 const Home: NextPage = () => {
   return (
@@ -178,6 +179,8 @@ const Home: NextPage = () => {
           </div>
         </div>
       </main>
+
+      <Widget />
     </>
   );
 };
