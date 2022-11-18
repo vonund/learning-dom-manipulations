@@ -1,4 +1,5 @@
 import useDraggable from "../../hooks/useDraggable.hook";
+import WidgetDraggable from "./widget-draggable.component";
 
 const Widget = () => {
   const { state, handleMouseDown } = useDraggable();
@@ -7,12 +8,12 @@ const Widget = () => {
     <div
       className="
       fixed right-0 top-1/2 
-      cursor-grab rounded-l bg-rose-500 py-2 text-white
+      cursor-grab rounded-l bg-rose-500 text-white
       active:cursor-grabbing"
       onMouseDown={handleMouseDown}
       style={{ top: state.y }}
     >
-      <span className="pointer-events-none">widget</span>
+      <WidgetDraggable dragging={state.isDragging} />
     </div>
   );
 };
