@@ -22,8 +22,8 @@ function useDraggable() {
     [state]
   );
 
-  const handleMouseMove = useCallback(
-    (event: globalThis.MouseEvent) => {
+  useEffect(() => {
+    const handleMouseMove = (event: globalThis.MouseEvent) => {
       const { clientY } = event;
       const y = clientY - state.offsetY;
 
@@ -32,38 +32,39 @@ function useDraggable() {
         y: y < 0 ? 0 : y,
       });
       event.preventDefault();
-    },
-    [state]
-  );
+    };
 
-  const handleMouseUp = useCallback(() => {
-    setState({
-      ...state,
-      isDragging: false,
-    });
-  }, [state]);
+    const handleMouseUp = () => {
+      setState({
+        ...state,
+        isDragging: false,
+      });
+    };
 
-  useEffect(() => {
-    if (!state.isDragging) {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
-      return;
-    }
+    const addDocumentEventListeners = () => {
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+    };
 
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
-
-    return () => {
+    const removeDocumentEventListeners = () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [state.isDragging, handleMouseMove, handleMouseUp]);
+
+    if (!state.isDragging) {
+      removeDocumentEventListeners();
+      return;
+    }
+    addDocumentEventListeners();
+
+    return () => {
+      removeDocumentEventListeners();
+    };
+  }, [state]);
 
   return {
     state,
     handleMouseDown,
-    handleMouseMove,
-    handleMouseUp,
   };
 }
 
