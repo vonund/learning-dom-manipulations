@@ -1,5 +1,5 @@
 import useDraggable from "../../hooks/useDraggable.hook";
-import WidgetDraggable from "./widget-draggable.component";
+import Spinner from "./spinner.component";
 
 const Widget = () => {
   const { state, handleMouseDown } = useDraggable();
@@ -13,7 +13,7 @@ const Widget = () => {
       onMouseDown={handleMouseDown}
       style={{ top: state.y }}
     >
-      <WidgetDraggable dragging={state.isDragging} />
+      <Spinner dragging={state.isDragging} />
     </div>
   );
 };

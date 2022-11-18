@@ -17,7 +17,7 @@ const spinner = cva(["h-8 w-8 rounded-full border-4 transition-transform"], {
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props extends SpinnerProps {}
 
-const WidgetDraggable = ({ dragging }: Props) => {
+const Spinner = ({ dragging }: Props) => {
   return (
     <div className="pointer-events-none p-2">
       <div className={spinner({ dragging })}></div>
@@ -25,4 +25,4 @@ const WidgetDraggable = ({ dragging }: Props) => {
   );
 };
 
-export default WidgetDraggable;
+export default Spinner;
